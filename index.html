@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<meta name="author" content="Ethan Gray">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+  <script>
+    let results;
+    
+    const options = ["bear", "ninja", "hunter"];
+    let randomNumber = Math.floor(Math.random() * 3);
+    var compChoice = options[randomNumber];
+    var cont = "yes";
+    var uWins = 0;
+    var cWins = 0;
+    var ties = 0;
+    //entering the users name and saves as a variable cName or the characters name
+    let cName = prompt('Welcome to Bear Hunter Ninja! Please enter your name to get started:');
+
+    //repeats back the users name
+    alert("Hi " + cName + ", Let's play!")
+
+    //asks the user to choose which he is? and saves as the variable gChoice or game choice
+    var gChoice;
+
+    //declaring computer option
+    //let cChoice = "Bear";
+
+    //displays the users choice and then the following computers hard programmed choice of Bear in HTML
+    //document.body.innerHTML = cName + ", you picked " + gChoice + "! <br> The computer picked " + cChoice + "!";
+
+    //displays the users and then the following computers hard programmed choice of Bear in the console
+    //console.log(cName + ", you picked " + gChoice + "! ");
+    //console.log("The computer picked " + cChoice + "!");
+
+
+    //my conditionals for the game, it uses the users input and the computers input to determine the winner using comparitives. I understand the use of a switch with numerical decisions I just wasn't the most confident at using it for comparing the entered strings
+
+    while (cont != "no") {
+      gChoice = prompt('Who are you: Bear, Ninja, or Hunter?').toLowerCase();
+      compChoice = options[randomNumber];
+      if (gChoice === "bear" && compChoice === "bear") {
+        results = "Its a tie!";
+        ties++;
+      }
+      else if (gChoice === "ninja" && compChoice === "ninja") {
+        results = "Its a tie!";
+        ties++;
+      }
+      else if (gChoice === "hunter" && compChoice === "hunter") {
+        results = "Its a tie!";
+        ties++;
+      }
+      else if (gChoice === "bear" && compChoice === "ninja") {
+        results = "Congratulations you Won!";
+        uWins++;
+      }
+      else if (gChoice === "ninja" && compChoice === "hunter") {
+        results = "Congratulations you Won!";
+        uWins++;
+      }
+      else if (gChoice === "hunter" && compChoice === "bear") {
+        results = "Congratulations you Won!";
+        uWins++;
+      }
+      else if (gChoice === "hunter" && compChoice === "ninja") {
+        results = "You lost to the Computer!";
+        cWins++;
+      }
+      else if (gChoice === "bear" && compChoice === "hunter") {
+        results = "You lost to the Computer!";
+        cWins++;
+      }
+      else if (gChoice === "ninja" && compChoice === "bear") {
+        results = "You lost to the Computer!";
+        cWins++;
+      }
+      else {
+        alert("Invalid Entry Try again");
+      }
+      console.log("3");
+      console.log("2");
+      console.log("1");
+      document.body.innerHTML = cName + ", you picked " + gChoice + "! <br><br> The computer picked " + compChoice + "!<br><br>" + results + "<br><br>Total Record: <br> Your wins: " + uWins + "<br> Computer wins: " + cWins + "<br> Ties: " + ties;
+      console.log(cName + ", you picked " + gChoice + "! ");
+      console.log("");
+      console.log("The computer picked " + compChoice + "!");
+      console.log("");
+      console.log(results)
+      cont = prompt("Would you like to continue? (no to exit, anything else to continue)")
+    }
+  </script>
+</body>
+
+</html>
